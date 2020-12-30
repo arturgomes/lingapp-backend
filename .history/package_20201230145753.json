@@ -1,6 +1,7 @@
 {
   "name": "lingapp-backend",
   "version": "1.0.0",
+  // "type": "module",
   "main": "index.js",
   "author": "Artur Oliveira Gomes <gomesa@tcd.ie>",
   "license": "MIT",
