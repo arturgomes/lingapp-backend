@@ -1,5 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinColumn } from "typeorm";
 import Turma from './Turma';
+import Curso from './Curso';
 
 @Entity('alunos')
 export default class Aluno {
@@ -54,14 +55,14 @@ export default class Aluno {
   @Column()
   responsavelCep: string;
 
-  @Column()
-  material: string;
+  // @Column()
+  // cursoTurma: string;
 
-  @Column()
-  pagamento: number;
+  // @Column()
+  // cursoMaterial: string;
 
-  @Column()
-  status: number;
+  // @Column()
+  // cursoPagamento: string;
   
   @ManyToOne(() => Aluno, aluno => aluno.turma)
 

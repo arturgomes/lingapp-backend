@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import alunosView from '../views/alunos_view';
 import Aluno from "../models/Aluno";
 import Turma from "../models/Turma";
+import Curso from "../models/Curso";
 
 export default {
   async index(request: Request, response: Response) {

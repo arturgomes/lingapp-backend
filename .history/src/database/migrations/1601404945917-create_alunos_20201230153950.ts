@@ -78,18 +78,6 @@ export class createImages1601404945917 implements MigrationInterface {
           name: 'responsavelCep',
           type: 'varchar'
         },
-        {
-          name: 'material',
-          type: 'varchar'
-        },
-        {
-          name: 'pagamento',
-          type: 'varchar'
-        },
-        {
-          name: 'status',
-          type: 'integer'
-        },
         // {
         //   name: 'cursoTurma',
         //   type: 'varchar'

@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import alunosView from '../views/alunos_view';
 import Aluno from "../models/Aluno";
 import Turma from "../models/Turma";
+import Curso from "../models/Curso";
 
 export default {
   async index(request: Request, response: Response) {
@@ -101,6 +102,7 @@ export default {
       material: cursoMaterial,
       pagamento: cursoPagamento,
       status: cursoStatus,
+      aluno: aluno
       turma
       // cursoAluno,
       // cursoMaterial,
@@ -118,6 +120,29 @@ export default {
     if (turmas.alunos.length < turmas.lotacao) {
       const aluno = alunosRepository.create(data);
       await alunosRepository.save(aluno);
+      
+
+      const cursosRepository = getRepository(Curso);
+      // const requestImages = request.files as Express.Multer.File[];
+
+      const curso_data = {
+       
+      };
+
+      const schema = Yup.object().shape({
+        material: Yup.string().required(),
+        pagamento: Yup.string().required(),
+        status: Yup.number().required(),
+        aluno: Yup.object().required(),
+      });
+
+      await schema.validate(curso_data, {
+        abortEarly: false,
+      });
+
+      const curso = cursosRepository.create(curso_data);
+
+      await cursosRepository.save(curso);
       return response.status(201)
         .json(alunosView.render(aluno));
     }

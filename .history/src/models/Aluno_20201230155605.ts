@@ -1,5 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToOne, JoinColumn } from "typeorm";
 import Turma from './Turma';
+import Curso from './Curso';
 
 @Entity('alunos')
 export default class Aluno {
@@ -72,4 +73,8 @@ export default class Aluno {
   @JoinColumn({ name: 'turma_id' })
   turma: Turma;
 
+  @OneToOne(() => Aluno, aluno => aluno.curso)
+
+  @JoinColumn({ name: 'curso_id' })
+  curso: Curso;
 }
