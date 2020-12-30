@@ -4,7 +4,6 @@ import multerConfig from './config/multer';
 
 import TurmaController from './controllers/TurmaController';
 import AlunoController from './controllers/AlunoController';
-import CursoController from './controllers/CursoController';
 
 const routes = Router();
 const upload = multer(multerConfig);

@@ -21,6 +21,7 @@ export default {
       responsavelTelefone: aluno.responsavelTelefone,
       responsavelCep: aluno.responsavelCep,
       turma: aluno.turma,
+      curso: cursosView.render(aluno.curso),
 
     }
   },

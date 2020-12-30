@@ -1,5 +1,5 @@
 import Aluno from '../models/Aluno';
-import cursosView from './cursos_view';
+import cursossView from './cursos_view';
 
 export default {
   render(aluno: Aluno) {
@@ -21,6 +21,7 @@ export default {
       responsavelTelefone: aluno.responsavelTelefone,
       responsavelCep: aluno.responsavelCep,
       turma: aluno.turma,
+      curso: cursosView.render(aluno.curso),
 
     }
   },
