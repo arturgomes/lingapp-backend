@@ -1,14 +1,12 @@
 {
-  "name": "lingapp-backend",
+  "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Artur Oliveira Gomes <gomesa@tcd.ie>",
+  "author": "Diego Fernandes <diego.schell.f@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev:server": "ts-node-dev src/server.ts --transpile-only --ignore-watch node_modules --respawn",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "start":"ts-node index.ts",
-    "build": "tsc"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
