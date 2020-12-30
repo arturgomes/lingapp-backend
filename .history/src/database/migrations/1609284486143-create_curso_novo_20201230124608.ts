@@ -1,5 +1,7 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
-
+// import {MigrationInterface, QueryRunner, Table} from "typeorm";
+const MigrationInterface = require("typeorm");
+const QueryRunner = require("typeorm");
+const Table = require("typeorm");
 
 export class createCursoNovo1609284486143 implements MigrationInterface {
 

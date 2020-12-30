@@ -1,5 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
-
+const {MigrationInterface, QueryRunner, Table} = require("typeorm");
 
 export class createOrphanages1601399238009 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
