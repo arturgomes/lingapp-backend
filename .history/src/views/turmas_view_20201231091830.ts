@@ -22,8 +22,8 @@ export default {
 
   renderMany(turmas: Turma[]) {
     if( turmas){
-      return turmas.map(turma => this.render(turma));}
+    return turmas.map(turma => this.render(turma));}
     else
-      return null;
+    return null;
   }
 }

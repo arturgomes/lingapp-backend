@@ -3,12 +3,11 @@ import alunosView from './alunos_view';
 
 export default {
   render(turma: Turma) {
-    let vg;
     if(!turma.alunos){
-      vg = turma.lotacao;
+      const vg = turma.lotacao;
     }
     else{
-      vg = turma.alunos.length
+      const vg = turma.alunos.length
     }
     return {
       id: turma.id,
@@ -21,9 +20,6 @@ export default {
   },
 
   renderMany(turmas: Turma[]) {
-    if( turmas){
-      return turmas.map(turma => this.render(turma));}
-    else
-      return null;
+    return turmas.map(turma => this.render(turma));
   }
 }

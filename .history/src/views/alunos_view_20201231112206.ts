@@ -22,26 +22,21 @@ export default {
       material: aluno.material,
       pagamento: aluno.pagamento,
       status: aluno.status,
-      turma: aluno.turma.id,
+      turma: aluno.turma,
 
     }
   },
   renderNm(aluno: Aluno) {
-    if (aluno) {
-      return {
-        alunoName: aluno.alunoFirstName + " " + aluno.alunoLastName,
-        turma: aluno.turma
-      }
+    return {
+      alunoName: aluno.alunoFirstName+" "+aluno.alunoLastName,
+      turma: aluno.turma
     }
-    else
-      return null
   },
   renderName(alunos: Aluno[]) {
-    if (alunos) {
-      return alunos.map(aluno => this.renderNm(aluno));
-    }
+    if(alunos){
+    return alunos.map(aluno => this.renderNm(aluno));}
     else
-      return null
+    return null
   },
   renderMany(alunos: Aluno[]) {
     return alunos.map(aluno => this.render(aluno));

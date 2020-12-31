@@ -22,12 +22,12 @@ export default {
       material: aluno.material,
       pagamento: aluno.pagamento,
       status: aluno.status,
-      turma: aluno.turma.id,
+      turma: aluno.turma,
 
     }
   },
   renderNm(aluno: Aluno) {
-    if (aluno) {
+    if (alunos) {
       return {
         alunoName: aluno.alunoFirstName + " " + aluno.alunoLastName,
         turma: aluno.turma

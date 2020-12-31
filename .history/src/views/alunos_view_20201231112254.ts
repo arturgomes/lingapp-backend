@@ -22,7 +22,7 @@ export default {
       material: aluno.material,
       pagamento: aluno.pagamento,
       status: aluno.status,
-      turma: aluno.turma.id,
+      turma: aluno.turma,
 
     }
   },
