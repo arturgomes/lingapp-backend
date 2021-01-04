@@ -119,10 +119,10 @@ export default {
       const aluno = alunosRepository.create(data);
       await alunosRepository.save(aluno);
       return response.status(201)
-        .json({message:1});
+        .json(alunosView.render(aluno));
     }
     else {
-      response.status(400).json({ message: 2 })
+      response.status(400).json({ message: "turma lotada" })
     }
   }
 }
