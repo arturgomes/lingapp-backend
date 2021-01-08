@@ -1,0 +1,26 @@
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn, CreateDateColumn, UpdateDateColumn, ManyToOne } from "typeorm";
+import Aluno from './Aluno';
+
+@Entity('observacoes')
+export default class Observacao {
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+
+  @Column()
+  tipo: string;
+
+  @Column()
+  desc: string;
+  
+  @CreateDateColumn({type: "timestamp"})
+  createdAt: Date;
+
+  @UpdateDateColumn({type: "timestamp"})
+  updatedAt: Date;
+  
+  @ManyToOne(() => Aluno, aluno => aluno.observacoes)
+  
+  @JoinColumn({ name: 'aluno_id' })
+  aluno: Aluno;
+  
+}
