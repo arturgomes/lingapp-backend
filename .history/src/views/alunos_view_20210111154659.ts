@@ -2,7 +2,6 @@ import Aluno from '../models/Aluno';
 
 export default {
   render(aluno: Aluno) {
-    console.log(aluno);
     return {
       id:aluno.id,
       alunoFirstName: aluno.alunoFirstName,
@@ -26,7 +25,7 @@ export default {
       material: aluno.material,
       pagamento: aluno.pagamento,
       status: aluno.status,
-      turma: aluno.turma.id,
+      turma_id: aluno.turma_id,
 
     }
   },

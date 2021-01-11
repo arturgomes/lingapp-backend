@@ -20,7 +20,7 @@ export default {
     const alunosRepository = getRepository(Aluno);
     // const aluno = await alunosRepository.find({where:{id}})
     const aluno = await alunosRepository.findOneOrFail(id);
-    // console.log(aluno)
+    console.log(aluno)
     return response.json(alunosView.render(aluno));
   },
 
