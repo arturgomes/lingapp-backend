@@ -65,9 +65,6 @@ export default class Aluno {
   obs: string;
   
   @Column()
-  vencimento: string;
-  
-  @Column()
   status: number;
   
   @Column()

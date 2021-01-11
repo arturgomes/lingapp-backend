@@ -170,7 +170,30 @@ export default {
     const alunosRepository = getRepository(Aluno);
     const turmaRepository = getRepository(Turma);
 
- 
+    const schema = Yup.object().shape({
+      alunoFirstName: Yup.string().required(),
+      alunoLastName: Yup.string().required(),
+      // alunoInsta: Yup.string().required(),
+      // alunoCamiseta: Yup.string().required(),
+      alunoNascimento: Yup.string().required(),
+      alunoTelefone: Yup.string().required(),
+      alunoEmail: Yup.string().required(),
+      responsavelAddress1: Yup.string().required(),
+      // responsavelAddress2: Yup.string().required(),
+      responsavelBairro: Yup.string().required(),
+      responsavelCidade: Yup.string().required(),
+      responsavelCpf: Yup.string().required(),
+      responsavelEmail: Yup.string().required(),
+      responsavelEstado: Yup.string().required(),
+      responsavelNascimento: Yup.string().required(),
+      responsavelNomeCompleto: Yup.string().required(),
+      responsavelTelefone: Yup.string().required(),
+      responsavelCep: Yup.string().required(),
+      // cursoTurma: Yup.string().required(),
+      turma: Yup.number().required(),
+      // cursoMaterial: Yup.string().required(),
+      // cursoPagamento: Yup.string().required(),
+    });
     const data = {
       alunoFirstName,
       alunoLastName,
@@ -196,13 +219,29 @@ export default {
       pagamento: cursoPagamento,
       status: cursoStatus,
       turma
+      // cursoAluno,
+      // cursoMaterial,
+      // cursoPagamento, 
     }
-    // const aluno = alunosRepository.update()
+    // console.log(data)
+
+    // await schema.validate(data, {
+    //   abortEarly: false,
+    // });
+    //contar numero de alunos e ver se já lotou turma
+    const turmas = await turmaRepository.findOneOrFail({ id: turma }, {
+      relations: ['alunos']
+    });
+    // console.log(turmas.alunos.length)
+    // if (turmas.alunos.length < turmas.lotacao) {
       const aluno = alunosRepository.create(data);
       console.log(aluno)
       await alunosRepository.save(aluno);
       return response.status(201)
         .json({message:1});
-   
+    // }
+    // else {
+    //   response.status(400).json({ message: 2 })
+    // }
   }
 }
