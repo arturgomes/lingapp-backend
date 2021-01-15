@@ -192,9 +192,8 @@ export default {
       material: cursoMaterial,
       pagamento: cursoPagamento,
       status: cursoStatus,
-      turma:cursoTurma
+      turma
     }
-    console.log(data)
     const aluno = await alunosRepository.findOne({where: {alunoEmail}})
     await alunosRepository.save({...aluno,...data});
     // const aluno = alunosRepository.update()

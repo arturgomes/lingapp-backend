@@ -194,7 +194,6 @@ export default {
       status: cursoStatus,
       turma:cursoTurma
     }
-    console.log(data)
     const aluno = await alunosRepository.findOne({where: {alunoEmail}})
     await alunosRepository.save({...aluno,...data});
     // const aluno = alunosRepository.update()
