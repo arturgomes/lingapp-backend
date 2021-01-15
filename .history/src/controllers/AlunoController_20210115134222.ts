@@ -202,7 +202,7 @@ export default {
     // const aluno = alunosRepository.update()
       const aluno1 = alunosRepository.create(data);
       console.log(aluno)
-      // await alunosRepository.save(aluno);
+      await alunosRepository.save(aluno);
       return response.status(201)
         .json({message:1});
    

@@ -198,11 +198,11 @@ export default {
       turma
     }
     const aluno = await alunosRepository.findOne({where: {alunoEmail}})
-    await alunosRepository.save({...aluno,...data});
+    await alunosRepository.save({...aluno,...data})
     // const aluno = alunosRepository.update()
       const aluno1 = alunosRepository.create(data);
       console.log(aluno)
-      // await alunosRepository.save(aluno);
+      await alunosRepository.save(aluno);
       return response.status(201)
         .json({message:1});
    
