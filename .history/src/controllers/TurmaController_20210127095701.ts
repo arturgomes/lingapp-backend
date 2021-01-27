@@ -15,20 +15,15 @@ export default {
     });
     const ordTurmas = _.orderBy(turmas, t => t.id);
     console.log(ordTurmas)
-    return response.json(turmasView.renderMany(ordTurmas));
+    return response.json(turmasView.renderManyList(ordTurmas));
   },
 
   async turmas(request: Request, response: Response) {
     const turmasRepository = getRepository(Turma);
   
-    const turmas = await turmasRepository.find({where: {ativo:true},
-      order: {
-        nome: "ASC",
-        ativo: "DESC"
-    }
-    })
+    const turmas = await turmasRepository.find({relations: ['alunos']})
     console.log(turmas)
-    return response.json(turmasView.renderManyList(turmas));
+    return response.json(turmasView.renderMany(turmas));
   },
 
   async show(request: Request, response: Response) {

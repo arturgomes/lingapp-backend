@@ -21,14 +21,10 @@ export default {
   async turmas(request: Request, response: Response) {
     const turmasRepository = getRepository(Turma);
   
-    const turmas = await turmasRepository.find({where: {ativo:true},
-      order: {
-        nome: "ASC",
-        ativo: "DESC"
-    }
-    })
+    const turmas = await turmasRepository.find({
+    });
     console.log(turmas)
-    return response.json(turmasView.renderManyList(turmas));
+    return response.json(turmasView.renderMany(turmas));
   },
 
   async show(request: Request, response: Response) {

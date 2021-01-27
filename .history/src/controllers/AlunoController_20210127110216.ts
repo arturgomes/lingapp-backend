@@ -20,7 +20,13 @@ export default {
     const alunosRepository = getRepository(Aluno);
     // const aluno = await alunosRepository.find({where:{id}})
     const aluno = await alunosRepository.find({where:{id}, relations: ['turma'] });
-
+    // const aluno2 = await alunosRepository.findOneOrFail(id,{select:['turma_id'], relations: ['turma'] });
+    const turmasRepository = getRepository(Turma);
+  
+    // const turmas = await turmasRepository.find({
+    //   relations: ['alunos']
+    // });
+    // return response.json(aluno);
     console.log(aluno)
     return response.json(alunosView.render(aluno[0]));
   },

@@ -19,7 +19,7 @@ export default {
     // console.log(id)
     const alunosRepository = getRepository(Aluno);
     // const aluno = await alunosRepository.find({where:{id}})
-    const aluno = await alunosRepository.find({where:{id}, relations: ['turma'] });
+    const aluno = await alunosRepository.find({where:{id}});
 
     console.log(aluno)
     return response.json(alunosView.render(aluno[0]));
