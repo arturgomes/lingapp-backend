@@ -56,7 +56,7 @@ export default {
       // cursoMaterial,
       // cursoPagamento, 
     } = request.body;
-    // console.log("turma: ",      turma    )
+    console.log("turma: ",      turma    )
 
     const alunosRepository = getRepository(Aluno);
     const turmaRepository = getRepository(Turma);
@@ -126,7 +126,7 @@ export default {
     // console.log(turmas.alunos.length)
     // if (turmas.alunos.length < turmas.lotacao) {
       const aluno = alunosRepository.create(data);
-      // console.log(aluno)
+      console.log(aluno)
       await alunosRepository.save(aluno);
       return response.status(201)
         .json({message:1});
@@ -163,7 +163,7 @@ export default {
       vencimento,
       obs,
     } = request.body;
-    // console.log("turma: ",      turma    )
+    console.log("turma: ",      turma    )
 
     const alunosRepository = getRepository(Aluno);
     const turmaRepository = getRepository(Turma);
@@ -195,12 +195,12 @@ export default {
       status: cursoStatus,
       turma:cursoTurma
     }
-    // console.log(data)
+    console.log(data)
     const aluno = await alunosRepository.findOne({where: {alunoEmail}})
     await alunosRepository.save({...aluno,...data});
     // const aluno = alunosRepository.update()
       const aluno1 = alunosRepository.create(data);
-      // console.log(aluno)
+      console.log(aluno)
       // await alunosRepository.save(aluno);
       return response.status(201)
         .json({message:1});

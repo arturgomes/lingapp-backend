@@ -27,7 +27,7 @@ export default {
         ativo: "DESC"
     }
     })
-    // console.log(turmas)
+    console.log(turmas)
     return response.json(turmasView.renderManyList(turmas));
   },
 
