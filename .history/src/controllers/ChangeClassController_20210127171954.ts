@@ -22,7 +22,7 @@ export default {
     const turma = await turmaRepository.findOne({where:{id:classe}})
     console.log(turma)
     if(turma){
-      await alunosRepository.save({...aluno, turma}).then(response => console.log(response))
+      await alunosRepository.save({...aluno, turma})
     }
     // aluno.turma = novaTurma;
     // await alunosRepository.update(id, {...aluno,turma:()=>classe})

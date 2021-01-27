@@ -21,9 +21,7 @@ export default {
     // const aluno = alunosRepository.create(data);
     const turma = await turmaRepository.findOne({where:{id:classe}})
     console.log(turma)
-    if(turma){
-      await alunosRepository.save({...aluno, turma}).then(response => console.log(response))
-    }
+    aluno = {...aluno, turma}
     // aluno.turma = novaTurma;
     // await alunosRepository.update(id, {...aluno,turma:()=>classe})
     // .then(r => console.log(r));

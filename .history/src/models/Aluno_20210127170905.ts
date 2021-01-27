@@ -76,8 +76,10 @@ export default class Aluno extends BaseEntity{
   @Column()
   alunoCamiseta: string;
 
-  @ManyToOne(() => Turma, turma => turma.id)
-  @JoinColumn({ name: 'turma_id', referencedColumnName: 'id' })
+  @ManyToOne(() => Aluno, aluno => aluno.turma)
+  @JoinColumn({ name: 'turma_id', 
+  // referencedColumnName: 'id' 
+})
   turma: Turma;
 
   @OneToMany(() => Observacao, observacao => observacao.aluno, {

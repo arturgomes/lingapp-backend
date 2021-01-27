@@ -15,16 +15,10 @@ export default {
 
     const alunosRepository = getRepository(Aluno);
     const turmaRepository = getRepository(Turma);
-    let aluno = await alunosRepository.findOne({where:{id}
-      , relations: ['turma']
-     })
+    let aluno = await alunosRepository.findOne({where:{id}, relations: ['turma'] })
     // const aluno = alunosRepository.create(data);
-    const turma = await turmaRepository.findOne({where:{id:classe}})
-    console.log(turma)
-    if(turma){
-      await alunosRepository.save({...aluno, turma}).then(response => console.log(response))
-    }
-    // aluno.turma = novaTurma;
+    console.log(aluno)
+    // aluno.turma = classe;
     // await alunosRepository.update(id, {...aluno,turma:()=>classe})
     // .then(r => console.log(r));
     
