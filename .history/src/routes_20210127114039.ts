@@ -15,6 +15,7 @@ const upload = multer(multerConfig);
 routes.get('/turma', TurmaController.index);
 routes.get('/turma/:id', TurmaController.show);
 routes.get('/turmalista', TurmaListController.index);
+
 routes.post('/turma', upload.array('images'), TurmaController.create);
 routes.post('/aluno', AlunoController.create);
 routes.get('/aluno', AlunoController.index);
