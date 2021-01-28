@@ -24,7 +24,9 @@ export default {
     if(turma){
       await alunosRepository.save({...aluno, turma}).then(response => console.log(response))
       return response.status(201).json({message:`Aluno alterado para a turma ${turma.horario}`})
+
     }
+    
     else {
       response.status(400).json({ message: 2 })
     }

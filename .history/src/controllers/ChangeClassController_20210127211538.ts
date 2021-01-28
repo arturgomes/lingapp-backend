@@ -24,7 +24,25 @@ export default {
     if(turma){
       await alunosRepository.save({...aluno, turma}).then(response => console.log(response))
       return response.status(201).json({message:`Aluno alterado para a turma ${turma.horario}`})
+
     }
+    // aluno.turma = novaTurma;
+    // await alunosRepository.update(id, {...aluno,turma:()=>classe})
+    // .then(r => console.log(r));
+    
+    // aluno.turma_id = turma
+    // .then(
+    //   r => {
+    //   }
+    //   );
+    // // console.log(turmas.alunos.length)
+    // if (turmas.alunos.length < turmas.lotacao) {
+    //   const aluno = alunosRepository.create(data);
+    //   console.log(aluno)
+    //   await alunosRepository.save(aluno);
+    //   return response.status(201)
+    //     .json({message:1});
+    // }
     else {
       response.status(400).json({ message: 2 })
     }
