@@ -108,10 +108,10 @@ export default {
       status: cursoStatus,
       turma
     }
-    const aluno = await alunosRepository.create(data);
+    const aluno = alunosRepository.create(data);
     // console.log(aluno)
-    const result = await alunosRepository.save(aluno);
-    return response.status(201).json({message:result});
+    await alunosRepository.save(aluno);
+    return response.status(201).json({message:1});
   },
   async update(request: Request, response: Response) {
     const {
@@ -138,7 +138,6 @@ export default {
       cursoPagamento,
       cursoStatus,
       turma,
-      online,
       vencimento,
       obs,
     } = request.body;

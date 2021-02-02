@@ -138,7 +138,6 @@ export default {
       cursoPagamento,
       cursoStatus,
       turma,
-      online,
       vencimento,
       obs,
     } = request.body;
