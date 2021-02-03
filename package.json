@@ -17,6 +17,7 @@
     "@types/multer": "^1.4.4",
     "@types/node": "^14.14.16",
     "@types/yup": "^0.29.7",
+    "aws-sdk": "^2.835.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",

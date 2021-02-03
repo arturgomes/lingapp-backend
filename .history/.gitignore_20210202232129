@@ -1,0 +1,9 @@
+node_modules
+
+src/database/database.sqlite
+
+uploads/*
+!uploads/.gitkeep
+node_modules/
+.gitignore
+.elasticbeanstalk/
