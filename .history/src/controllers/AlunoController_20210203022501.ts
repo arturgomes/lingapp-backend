@@ -169,7 +169,7 @@ export default {
       responsavelCep,
       vencimento,
       obs,
-      online:JSON.parse(online.toLowerCase()),
+      online,
       material: cursoMaterial,
       pagamento: cursoPagamento,
       status: cursoStatus,

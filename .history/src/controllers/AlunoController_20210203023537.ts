@@ -178,7 +178,9 @@ export default {
     console.log(data.online)
     const aluno = await alunosRepository.findOne({where: {alunoEmail}})
     await alunosRepository.save({...aluno,...data})
-    .then(response => console.log(response));
+    .then(response => {
+      return response.status(201) .json({message:1});
+    });
     // const aluno = alunosRepository.update()
       // const aluno1 = alunosRepository.create(data);
       // console.log(aluno)

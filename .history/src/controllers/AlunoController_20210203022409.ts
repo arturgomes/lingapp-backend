@@ -169,7 +169,7 @@ export default {
       responsavelCep,
       vencimento,
       obs,
-      online:JSON.parse(online.toLowerCase()),
+      online,
       material: cursoMaterial,
       pagamento: cursoPagamento,
       status: cursoStatus,
@@ -177,8 +177,7 @@ export default {
     }
     console.log(data.online)
     const aluno = await alunosRepository.findOne({where: {alunoEmail}})
-    await alunosRepository.save({...aluno,...data})
-    .then(response => console.log(response));
+    await alunosRepository.save({...aluno,...data});
     // const aluno = alunosRepository.update()
       // const aluno1 = alunosRepository.create(data);
       // console.log(aluno)
