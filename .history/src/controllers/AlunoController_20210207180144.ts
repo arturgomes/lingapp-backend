@@ -10,6 +10,7 @@ export default {
   async index(request: Request, response: Response) {
     const alunosRepository = getRepository(Aluno);
     const alunos = await alunosRepository.find({ relations: ['turma'] });
+    // console.log(alunos)
     return response.json(alunosView.renderShortList(alunos));
   },
 

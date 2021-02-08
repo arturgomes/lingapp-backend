@@ -24,7 +24,7 @@ routes.post('/aluno/:id', AlunoController.show);
 routes.post('/aluno/status/:id/:status', ChangeStatusController.update);
 routes.post('/aluno/class/:id/:classe', ChangeClassController.update);
 routes.post('/aluno/update/:id', AlunoController.update);
-routes.post('/sessions', SessionController.index);
 routes.use(authMiddleware);
+routes.post('/session', SessionController.index);
 
 export default routes;
