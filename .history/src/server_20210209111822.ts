@@ -1,5 +1,5 @@
 import express from 'express';
-import cors from 'cors';
+import * as cors from 'cors';
 import path from 'path';
 import 'express-async-errors';
 
@@ -12,6 +12,22 @@ const app = express();
 
 
 app.use(express.json());
+
+const options: cors.CorsOptions = {
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'X-Access-Token',
+  ],
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  origin: '*',
+  preflightContinue: false,
+};
+
+//use cors middleware
 
 app.use(cors({
   allowedHeaders: [

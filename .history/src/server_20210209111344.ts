@@ -9,23 +9,23 @@ import errorHandler from './errors/handler';
 import './database/connection';
 
 const app = express();
+var allowCrossDomain = function(req:request, res:response, next:NextFunction) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
 
+  // intercept OPTIONS method
+  if ('OPTIONS' == req.method) {
+    res.send(200);
+  }
+  else {
+    next();
+  }
+};
 
 app.use(express.json());
 
-app.use(cors({
-  allowedHeaders: [
-    'Origin',
-    'X-Requested-With',
-    'Content-Type',
-    'Accept',
-    'X-Access-Token',
-  ],
-  credentials: true,
-  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: '*',
-  preflightContinue: false,
-}));
+app.use(cors());
 // app.use(cors({
 //   origin: ["https://www.professorsergiolima.com.br",
 //   "https://professorsergiolima.com.br",
@@ -33,7 +33,7 @@ app.use(cors({
 //   "https://app.professorsergiolima.com.br"],
 //   credentials: true
 // }))
-
+// app.options("*", cors());
 app.use(routes);
 app.use(errorHandler);
 

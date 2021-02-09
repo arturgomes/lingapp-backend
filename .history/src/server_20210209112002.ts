@@ -13,19 +13,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({
-  allowedHeaders: [
-    'Origin',
-    'X-Requested-With',
-    'Content-Type',
-    'Accept',
-    'X-Access-Token',
-  ],
-  credentials: true,
-  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: '*',
-  preflightContinue: false,
-}));
+app.use(cors());
 // app.use(cors({
 //   origin: ["https://www.professorsergiolima.com.br",
 //   "https://professorsergiolima.com.br",

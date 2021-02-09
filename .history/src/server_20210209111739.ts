@@ -1,5 +1,5 @@
 import express from 'express';
-import cors from 'cors';
+import * as cors from 'cors';
 import path from 'path';
 import 'express-async-errors';
 
@@ -13,7 +13,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({
+const options: cors.CorsOptions = {
   allowedHeaders: [
     'Origin',
     'X-Requested-With',
@@ -23,9 +23,13 @@ app.use(cors({
   ],
   credentials: true,
   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-  origin: '*',
+  origin: API_URL,
   preflightContinue: false,
-}));
+};
+
+//use cors middleware
+
+app.options('*',cors(options));
 // app.use(cors({
 //   origin: ["https://www.professorsergiolima.com.br",
 //   "https://professorsergiolima.com.br",
