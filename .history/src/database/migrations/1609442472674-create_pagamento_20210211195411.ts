@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner } from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class createPagamento1609442472674 implements MigrationInterface {
 
@@ -25,6 +25,19 @@ export class createPagamento1609442472674 implements MigrationInterface {
                 {
                     name: 'aluno_id',
                     type: 'integer',
+                },
+                {
+                  name: 'data',
+                  type: 'varchar'
+                },
+                {
+                  default: 'now()',
+                  name: 'createdAt',
+                  type: 'timestamp',
+                }, {
+                  default: 'now()',
+                  name: 'updatedAt',
+                  type: 'timestamp',
                 },
             ],
             foreignKeys: [

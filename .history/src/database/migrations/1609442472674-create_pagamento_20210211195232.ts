@@ -26,6 +26,10 @@ export class createPagamento1609442472674 implements MigrationInterface {
                     name: 'aluno_id',
                     type: 'integer',
                 },
+                {
+                  name: 'data',
+                  type: 'varchar'
+                },
             ],
             foreignKeys: [
                 {
