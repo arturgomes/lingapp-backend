@@ -7,8 +7,8 @@ import TurmaListController from './controllers/TurmaListController';
 import AlunoController from './controllers/AlunoController';
 import ChangeStatusController from './controllers/ChangeStatusController';
 import ChangeClassController from './controllers/ChangeClassController';
-import SessionController from './controllers/SessionController';
-import authMiddleware from './middlewares/auth';
+// import SessionController from './controllers/SessionController';
+// import authMiddleware from './middlewares/auth';
 
 const routes = Router();
 const upload = multer(multerConfig);
